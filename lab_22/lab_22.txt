@@ -1,0 +1,83 @@
+LAB 22: USING HELP AND COMMAND SHORTCUTS
+
+OBJECTIVE:
+Master Cisco CLI productivity features (help, shortcuts, history, and aliases).
+
+----------------------------------------
+CONTEXT-SENSITIVE HELP
+
+1) Show commands starting with "sh"
+R1# sh?
+= Lists all commands starting with "sh"
+
+2) Show "show ip" options
+R1# show ip?
+= Displays available "show ip" subcommands
+
+3) General help for show
+R1# show ?
+R1# show ip ?
+R1# show ip route ?
+= Displays command syntax and options step by step
+
+4) Partial keyword help
+R1# show ip ro?
+route
+
+----------------------------------------
+COMMAND SHORTCUTS
+
+Shortcut      Full Command
+en            enable
+conf t        configure terminal
+int           interface
+sh            show
+sh ip int br  show ip interface brief
+wr            write memory
+
+----------------------------------------
+COMMAND HISTORY
+
+1) Show history
+R1# show history
+
+2) Increase history buffer size
+R1# terminal history size 100
+
+3) Recall previous commands
+Ctrl + P or Up Arrow     = Previous command
+Ctrl + N or Down Arrow   = Next command
+
+4) Reverse search
+Ctrl + R
+(type part of command to search history)
+
+----------------------------------------
+EDITING SHORTCUTS
+
+Keystroke      Action
+Ctrl + A       Move to beginning of line
+Ctrl + E       Move to end of line
+Ctrl + F       Move forward one character
+Ctrl + B       Move backward one character
+Ctrl + D       Delete character at cursor
+Ctrl + K       Delete from cursor to end of line
+Ctrl + U       Delete entire line
+Ctrl + W       Delete previous word
+Tab            Auto-complete command
+?              Context-sensitive help
+
+----------------------------------------
+COMMAND ALIASES
+
+1) Create aliases
+R1(config)# alias exec sb show ip interface brief
+R1(config)# alias exec sr show running-config
+R1(config)# alias exec sc show clock
+
+2) Use alias
+R1# sb
+= show ip interface brief
+
+3) Remove alias
+R1(config)# no alias exec sb

@@ -1,0 +1,80 @@
+LAB 23: CONFIGURING CLOCK ON ROUTER
+
+OBJECTIVE:
+Set system clock, timezone, and timestamps for accurate logging.
+
+----------------------------------------
+CONFIGURATION STEPS
+
+1) Enter configuration mode
+R1> enable
+R1# configure terminal
+
+----------------------------------------
+2) Set timezone
+R1(config)# clock timezone EST -5
+
+----------------------------------------
+3) Enable daylight saving time (optional)
+R1(config)# clock summer-time EDT recurring
+
+----------------------------------------
+4) Set system clock (manual time)
+R1(config)# exit
+R1# clock set 14:30:00 15 Mar 2024
+
+----------------------------------------
+5) Set hardware clock (calendar)
+R1# calendar set 14:30:00 15 Mar 2024
+
+----------------------------------------
+6) Sync calendar to system clock
+R1# clock read-calendar
+
+----------------------------------------
+VERIFICATION COMMANDS
+
+1) Show current clock
+R1# show clock
+
+Example:
+14:30:15.123 EST Thu Mar 15 2024
+
+----------------------------------------
+2) Detailed clock info
+R1# show clock detail
+
+Example:
+14:30:15.123 EST Thu Mar 15 2024
+Time source is user configuration
+
+----------------------------------------
+3) Show hardware calendar clock
+R1# show calendar
+
+Example:
+14:30:20 EST Thu Mar 15 2024
+
+----------------------------------------
+ENABLE TIMESTAMPS (LOGGING)
+
+R1(config)# service timestamps log datetime msec localtime show-timezone
+R1(config)# service timestamps debug datetime msec localtime show-timezone
+
+----------------------------------------
+VERIFY LOGGING
+
+R1# show logging
+
+Example:
+*Mar 15 14:30:15.123 EST: %SYS-5-CONFIG_I: Configured from console
+
+----------------------------------------
+NTP CONFIGURATION (AUTO TIME SYNC)
+
+R1(config)# ntp server 0.pool.ntp.org
+
+R1# show ntp status
+
+Example:
+Clock is synchronized, stratum 2
