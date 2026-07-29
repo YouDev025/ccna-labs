@@ -33,7 +33,21 @@ Each lab follows a consistent format:
 
 ## Lab Index
 
-### 🟢 Beginner Level — Foundation Labs (Labs 1–25)
+### � Repository Structure
+
+- Foundation Labs - Basic Navigation and Configuration/
+- VLANs_Routing_Services/
+- Switching_Technologies/
+- Routing_Protocols/
+- Network_Services/
+- NAT_ACL/
+- Security/
+- WAN_Advanced_Routing/
+- Advanced_Services/
+- Troubleshooting/
+- Projects/
+
+### �🟢 Beginner Level — Foundation Labs (Labs 1–25)
 *Weeks 1–2: Basic Navigation and Configuration*
 
 | Lab | Topic |
